@@ -1,3 +1,4 @@
+require("dotenv").config();
 import Vue from 'vue'
 import App from './App.vue'
 
@@ -7,7 +8,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyDSftU2lalfMmgzx5M5sob7BaQ78Fr5ekE",
+    key: process.env.KEY_SECRET,
     libraries: "places"
   }
 });

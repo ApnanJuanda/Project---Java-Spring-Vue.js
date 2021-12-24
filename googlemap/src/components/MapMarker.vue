@@ -6,7 +6,7 @@
     <gmap-map :center="center" :zoom="12" style="width: 100%; height: 400px">
       <gmap-marker
         :key="index"
-        v-for="(m, index) in markers"
+        v-for="(m, index) in markers" 
         :position="m"
         @click="center = m"
       ></gmap-marker>
@@ -20,6 +20,7 @@ export default {
   data() {
     return {
       center: { lat: -6.960848, lng: 107.966894 },
+      //markers is used to contain the position data to be marked
       markers: [],
       currentPlace: null,
     };
@@ -34,6 +35,7 @@ export default {
       this.currentPlace = place;
     },
     geolocate: function () {
+      //Setup first position in center latitude longitude
       navigator.geolocation.getCurrentPosition((position) => {
         this.center = {
           lat: position.coords.latitude,
@@ -41,6 +43,7 @@ export default {
         };
       });
 
+      //Setup position 2
       this.markers = [
         {
           lat: -92.587825,

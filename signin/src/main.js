@@ -3,9 +3,9 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-//src/main.js
 import GAuth from 'vue-google-oauth2'
 const gauthOption = {
+  //Configure the Google+ API
   clientId: '565044298562-o82m6vi24ua36l2fts271pagkiasekh1.apps.googleusercontent.com',
   scope: 'profile email',
   prompt: 'consent',
